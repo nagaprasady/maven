@@ -9,4 +9,22 @@ node('built-in')
     {
         cicd1.mavenbuild()
     }
+<<<<<<< HEAD
 }					
+=======
+    stage('continous deploy_loans')
+    {
+        cicd1.tomcatdeploy("multibranchpipeline","172.31.42.144","newtest1")
+    }
+    stage('continous test_loans')
+     {  cicd1.newGit("https://github.com/nagaprasady/FunctionalTesting.git")
+        cicd1.runselenium("multibranchpipeline")
+
+    }
+    stage('continous delivery_Master')
+    {
+        cicd1.tomcatdeploy("multibranchpipeline","172.31.47.170","prodtest1")
+    }
+    
+}
+>>>>>>> 57651cdc9dc9804a0eea7e283796d1e3ea4ff557
