@@ -1,0 +1,18 @@
+@Library('mylibrary')_
+node('built-in')
+{
+    stage('continous download_master')
+    {
+        cicd1.newGit("https://github.com/nagaprasady/maven.git")
+    }
+    stage('continous build_master')
+    {
+        cicd1.mavenbuild()
+    }
+    stage('continous deploy_master')
+    {
+        cicd1.tomcatdeploy("multibranchpipeline","172.31.42.144","newtest1")
+    }
+   }
+
+
