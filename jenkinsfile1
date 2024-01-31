@@ -1,24 +1,21 @@
 @Library('mylibrary')_
 node('built-in')
 {
-    stage('continous download_Master')
+    stage('continous download_loans')
     {
         cicd1.newGit("https://github.com/nagaprasady/maven.git")
     }
-    stage('continous build_Master')
+    stage('continous build_loans')
     {
         cicd1.mavenbuild()
     }
-    stage('continous deploy_Master')
+    stage('continous deploy_loans')
     {
         cicd1.tomcatdeploy("sharedlibrary","172.31.42.144","newtest")
     }
-    stage('continous test_Master')
+    stage('continous test_loans')
      {  cicd1.newGit("https://github.com/nagaprasady/FunctionalTesting.git")
         cicd1.runselenium("sharedlibrary")
     }
-    stage('continous delivery_Master')
-    {
-        cicd1.tomcatdeploy("sharedlibrary","172.31.47.170","prodtest")
-    }
+    
 }
