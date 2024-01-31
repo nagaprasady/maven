@@ -13,14 +13,6 @@ node('built-in')
     {
         cicd1.tomcatdeploy("multibranchpipeline","172.31.42.144","newtest1")
     }
-    stage('continous test_loans')
-     {  cicd1.newGit("https://github.com/nagaprasady/FunctionalTesting.git")
-        cicd1.runselenium("multibranchpipeline")
-
-    }
-    stage('continous delivery_Master')
-    {
-        cicd1.tomcatdeploy("multibranchpipeline","172.31.47.170","prodtest1")
-    }
+   }
     
 }
