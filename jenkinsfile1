@@ -9,5 +9,4 @@ node('built-in')
     {
         cicd1.mavenbuild()
     }
- }
-    
+      }
