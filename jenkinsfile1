@@ -9,9 +9,5 @@ node('built-in')
     {
         cicd1.mavenbuild()
     }
-    stage('continous deploy_master')
-    {
-        cicd1.tomcatdeploy("multibranchpipeline","172.31.42.144","newtest1")
-    }
-   }
+ }
     
